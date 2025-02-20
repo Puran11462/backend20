@@ -177,7 +177,7 @@ table tr td{
 .error{
     color:rgb(255, 0, 230);
 }
-/*table {
+table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
@@ -222,4 +222,97 @@ td img {
 
 .text-center {
     text-align: center;
+}
+@media (max-width: 1200px) {
+    .col-4 {
+        width: 30%;
+        margin: 2%;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .navbar-brand img {
+        max-width: 100px;
+    }
+
+    .col-4 {
+        width: 45%;
+    }
+
+    .admin-box {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar-brand img {
+        max-width: 80px;
+    }
+
+    .col-4 {
+        width: 100%;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-danger {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .admin-container {
+        padding: 50px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-brand img {
+        max-width: 70px;
+    }
+
+    .navbar-toggler {
+        font-size: 18px;
+    }
+
+    .admin-box {
+        padding: 15px;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-danger {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    th, td {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .footer-custom {
+        padding: 15px;
+    }
 }

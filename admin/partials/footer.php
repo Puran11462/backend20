@@ -3,7 +3,7 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-4 col-sm-6 col-12 d-flex flex-column align-items-center mb-4">
-              <img src="../images/logo.jpg" alt="Logo" class="logo mb-3">
+              <img src="../images2/logo.jpg" alt="Logo" class="logo mb-3">
               <p class="text-center">
                 Authentic Nepali Flavors served with passion. Visit Aago - where every meal is a story.
               </p>
@@ -37,7 +37,7 @@
       </footer>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
       <script src="/js/script.js"></script>
-
+    
 
 </body>
 </html>
