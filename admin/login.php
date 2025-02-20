@@ -5,6 +5,7 @@ include "../config/constants.php";
     <head>
         <title>Admin Login</title>
         <link rel="stylesheet" href="admin.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <style>
             * {
     margin: 0;
@@ -75,15 +76,14 @@ input:focus {
         <h1 class="text-center">Login</h1>
         <br><br>
       <?php
-if(isset($_SESSION["login"]))
- {
-    // Your code here
-    echo $_SESSION["login"];
-    unset($_SESSION["login"]);
-}
-if(isset($_SESSION["no-login-message"]))
-{
-    echo $_SESSION["no-login-message"];
+if(isset($_SESSION["no-login-message"])) {
+    echo "<script>
+        Swal.fire({
+            icon: 'warning',
+            title: 'Access Denied',
+            text: '{$_SESSION["no-login-message"]}'
+        });
+    </script>";
     unset($_SESSION["no-login-message"]);
 }
 ?>
@@ -99,6 +99,23 @@ if(isset($_SESSION["no-login-message"]))
 
         <input type="submit" name="submit" value="Login" class="btn-primary">
         </form>
+        <script>
+            function validateForm() {
+            let username = document.getElementById("username").value.trim();
+            let password = document.getElementById("password").value.trim();
+
+            if (username === "" || password === "") {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Validation Error',
+                    text: 'Both fields are required!'
+                });
+                return false; 
+            }
+
+            return true; 
+        }
+        </script>
        
     </div>
 </body>
@@ -121,16 +138,26 @@ $_SESSION["login"]="<div class='success'>Login Successful</div>";
 
 $_SESSION["user"]= $username;
 
-header("location:".SITEURL."admin/index.php");
-
-}else{
-    $_SESSION["login"]="<div class='error text-center'>Username and Password didnot match</div>";
-    header("location:".SITEURL."admin/login.php");
-    
-
-}}
-
-
-
-
-?>
+echo "<script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: 'Login Successful!',
+                confirmButtonText: 'OK'
+            }).then(() => {
+                window.location.href = '".SITEURL."admin/index.php';
+            });
+        </script>";
+    } else {
+        echo "<script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Login Failed',
+                text: 'Username or Password is incorrect'
+            }).then(() => {
+                window.location.href = '".SITEURL."admin/login.php';
+            });
+        </script>";
+    }
+}
+?>      
