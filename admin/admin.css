@@ -1,0 +1,225 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+.clearfix::after {
+   float:none;
+   clear:both;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: static;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    height: auto; 
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 700;
+    font-size: 16px;
+    background: linear-gradient(90deg, white, cyan);
+    -webkit-text-fill-color: transparent;
+    margin: 5px 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: cyan !important;
+    text-shadow: 0px 0px 10px rgba(255, 128, 0, 0.8);
+    border-radius: 10px;
+    border: 2px solid cyan;
+    padding: 5px 10px;
+}
+
+.navbar-nav .nav-link.active {
+    color: cyan;
+}
+
+.logo {
+    max-width: 120px;
+    height: auto;
+}
+
+/* Navbar icons */
+.navbar .d-flex a {
+    color: white;
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar .d-flex a:hover {
+    color: cyan;
+    transform: scale(1.1);
+}
+
+.navbar-toggler {
+    border: none;
+    background: none;
+}
+
+.navbar-toggler-icon {
+    color: white;
+}
+.col-4{
+    width:18%;
+    background-color: #ffffff8b;
+    margin:1%;
+    padding:2%;
+ float:left;
+}
+
+    .main-content {
+        padding: 3% 0px;
+        background-color: #f8f9fa;
+        color: #333;
+        font-family: 'Poppins', sans-serif;
+    }
+.footer-custom {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Footer links */
+.footer-custom a {
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-custom .bi:hover {
+    color: cyan;
+}
+
+/* Footer text */
+.footer-custom .team20 {
+    font-family: 'Oleo Script Swash Caps', cursive;
+    color: cyan;
+}
+.tdl-full{
+    width:100%;
+}
+
+table tr th{
+   border-bottom:1px solid black;
+   padding:1%;
+   text-align:center;
+}
+.wrapper{
+    width:100%;
+    text-align:center;
+    margin:0 auto;
+}
+table tr td{
+    padding:1%;
+   
+}
+.tbl-30{
+    margin:0 auto;
+}
+.btn-primary{
+    background-color: orange;
+    color:white;
+    padding:1%;
+    border-radius:5px;
+    font-weight:bold;
+    text-decoration:none;
+}
+.btn-primary:hover{
+    background-color: blue;
+
+}
+.btn-secondary{
+    background-color: green;
+    color:black;
+    padding:1%;
+    border-radius:5px;
+    font-weight:bold;
+    text-decoration:none;
+}
+.btn-secondary:hover{
+    background-color: blue;
+
+}
+.btn-danger{
+    background-color: red;
+    color:white;
+    padding:1%;
+    border-radius:5px;
+    font-weight:bold;
+    text-decoration:none;
+}
+.btn-danger:hover{
+    background-color: blue;
+
+}
+.success{
+    color:rgb(0, 128, 58);
+}
+.error{
+    color:rgb(255, 0, 230);
+}
+/*table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+td img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.btn-secondary {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.text-center {
+    text-align: center;
+}
