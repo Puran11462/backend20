@@ -72,7 +72,22 @@ include 'partials/header.php'?>
                     ?>
                     <h1><?php echo $count3; ?></h1> 
                        Total Orders
-            </div> 
+            </div>
+                <div class="col-4 text-center">
+                <?php
+                    $sql4="SELECT SUM(total) AS Total FROM tbl_order";
+
+                    $res4=mysqli_query($conn,$sql4);
+
+                $row4=mysqli_fetch_assoc($res4);
+
+                $total_revenue=$row4['Total'];
+                ?>
+                <h1><?php echo $total_revenue;?></h1>
+                <br/>
+                Renevue Generated
+            </div>
+
     </div>
     <div class="clearfix"></div>
 
