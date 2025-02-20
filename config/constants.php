@@ -2,7 +2,7 @@
 ob_start();
 session_start();
 
-define("SITEURL", "http://localhost/sagar/");
+define("SITEURL", "http://localhost/backend20/");
 
 define("LOCALHOST","localhost");
 define("DB_USERNAME","root");

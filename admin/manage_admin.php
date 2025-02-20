@@ -55,7 +55,7 @@
                 if($res == TRUE){
                     $count=mysqli_num_rows($res); #function to get all the rows in database
 
-                  $sn=1; //create a variable and assign the value
+                  $sn=1; 
 
 
             if($count> 0){
