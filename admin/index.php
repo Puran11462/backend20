@@ -62,7 +62,17 @@ include 'partials/header.php'?>
        <br/>
         Categories
     </div>
-            
+    <div class="col-4 text-center">
+                    <?php
+                    $sql3 = "SELECT * FROM tbl_order"; 
+
+                    $res3 = mysqli_query($conn, $sql3);
+                    $count3 = mysqli_num_rows($res3); 
+
+                    ?>
+                    <h1><?php echo $count3; ?></h1> 
+                       Total Orders
+            </div> 
     </div>
     <div class="clearfix"></div>
 
