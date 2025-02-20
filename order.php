@@ -1,5 +1,42 @@
 <?php
 include 'config/constants.php';
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['food'])) {
+    // Get user input
+    $food = mysqli_real_escape_string($conn, $_POST['food']);
+    $price = floatval($_POST['price']);
+    $qty = intval($_POST['qty']);
+    $total = $price * $qty;
+    $order_date = date("Y-m-d H:i:s");
+    $status = mysqli_real_escape_string($conn, $_POST['status']);
+    $customer_name = mysqli_real_escape_string($conn, $_POST['customer_name']);
+    $customer_contact = mysqli_real_escape_string($conn, $_POST['customer_contact']);
+    $customer_email = mysqli_real_escape_string($conn, $_POST['customer_email']);
+    $customer_address = mysqli_real_escape_string($conn, $_POST['customer_address']);
+
+    // Insert Order into Database
+    $sql = "INSERT INTO tbl_order (food, price, qty, total, order_date, status, customer_name, customer_contact, customer_email, customer_address) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "sdidssssss", $food, $price, $qty, $total, $order_date, $status, $customer_name, $customer_contact, $customer_email, $customer_address);
+    $res = mysqli_stmt_execute($stmt);
+
+    if ($res) {
+        $order_message = "
+            <div class='order-success'>
+                ✅ <strong>Order Placed Successfully!</strong><br>
+                <small><strong>Food:</strong> $food</small><br>
+                <small><strong>Price:</strong> $$price</small><br>
+                <small><strong>Quantity:</strong> $qty</small><br>
+                <small><strong>Total:</strong> $$total</small><br>
+            </div>";
+    } else {
+        $order_message = "<div class='error'>❌ Failed to place order.</div>";
+    }
+
+    mysqli_stmt_close($stmt);
+}
+mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
