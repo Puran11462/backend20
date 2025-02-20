@@ -104,17 +104,48 @@ html {
  float:left;
 }
 
+/* Ensure navbar collapses correctly */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.9); /* Dark background when expanded */
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    /* Make the toggler button white */
+    .navbar-toggler {
+        background-color: white;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .navbar-toggler-icon {
+        filter: invert(1);
+    }
+}
+
     </style>
     
 </head>
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50" tabindex="0">
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="position-absolute top-(-9) start-0">
-          <a href=""><img src="images2/logo.jpg" alt="Logo" class="logo"></a>
-        </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50" tabindex="0">
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container-fluid">
+                <a href="admin/index.php"><img src="../images2/logo.jpg" alt="Logo" class="logo"></a>
+            </div>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link gradient-text" href="index.php">Home</a></li>
